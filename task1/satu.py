@@ -1,7 +1,7 @@
-berat = int(input("Berat badan: "))
-tinggi = int(input("Tinggi badan: "))
+berat = float(input("Berat badan: "))
+tinggi = float(input("Tinggi badan: "))
 
-imt = float(berat) / (float(tinggi) * float(tinggi))
+imt = berat / (tinggi * tinggi)
 
 if imt < 18.5:
     kategori = "Kurus"
