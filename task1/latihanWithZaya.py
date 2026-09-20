@@ -1,7 +1,19 @@
-user = int(input("Masukkan angka: "))
+ZayanaCantik = True
+ZayaPunyaNopal = True
+MerekaPacaran = False
 
-hasil = user + user
-
-print(hasil)
-print(f"Hasilnya: {hasil}")
-
+while True:
+    if ZayanaCantik and ZayaPunyaNopal:
+        print("Zaya dan Nopal pacaran")
+        MerekaPacaran = True
+        break
+    else:
+        print("Zaya dan Nopal tidak pacaran")
+        MerekaPacaran = False
+        break
+    
+def pacaran():
+    if MerekaPacaran:
+        print("Zaya dan Nopal pacaran")
+    else:
+        print("Zaya dan Nopal wajib pacaran")
