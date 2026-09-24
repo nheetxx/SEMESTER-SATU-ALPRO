@@ -1,0 +1,47 @@
+START
+
+batasBawah = 1
+batasAtas = 5
+bw = batasBawah
+ba = batasAtas
+
+IF bw <= ba THEN
+    IF (bw < 2) OR (bw != 2 AND bw MOD 2 == 0) OR (bw != 3 AND bw MOD 3 == 0) THEN
+        prima = False
+    ELSE
+        prima = True
+    END IF
+    IF prima THEN
+        OUTPUT bw
+    END IF
+    bw = bw + 1
+
+    IF bw <= ba THEN
+        IF (bw < 2) OR (bw != 2 AND bw MOD 2 == 0) OR (bw != 3 AND bw MOD 3 == 0) THEN
+            prima = False
+        ELSE
+            prima = True
+        END IF
+        IF prima THEN
+            OUTPUT bw
+        END IF
+        bw = bw + 1
+
+        IF bw <= ba THEN
+            IF (bw < 2) OR (bw != 2 AND bw MOD 2 == 0) OR (bw != 3 AND bw MOD 3 == 0) THEN
+                prima = False
+            ELSE
+                prima = True
+            END IF
+            IF prima THEN
+                OUTPUT bw
+            END IF
+            bw = bw + 1
+
+            IF bw <= ba THEN
+                IF (bw < 2) OR (bw != 2 AND bw MOD 2 == 0) OR (bw != 3 AND bw MOD 3 == 0) THEN
+                    prima = False
+                ELSE
+                    prima = True
+                END IF
+                IF prima

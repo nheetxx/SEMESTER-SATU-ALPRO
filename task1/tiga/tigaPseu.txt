@@ -1,0 +1,40 @@
+START
+
+INPUT jenis
+INPUT jamMasuk
+INPUT menitMasuk
+INPUT jamKeluar
+INPUT menitKeluar
+
+durasiMenit = (jamKeluar * 60 + menitKeluar) - (jamMasuk * 60 + menitMasuk)
+durasiJam = durasiMenit DIV 60
+
+IF durasiMenit MOD 60 != 0 THEN
+    durasiJam = durasiJam + 1
+END IF
+
+IF durasiJam < 1 THEN
+    durasiJam = 1
+END IF
+
+IF jenis == "motor" THEN
+    IF durasiJam == 1 THEN
+        biaya = 2000
+    ELSE
+        biaya = 2000 + (durasiJam - 1) * 1000
+    END IF
+ELSE IF jenis == "mobil" THEN
+    IF durasiJam == 1 THEN
+        biaya = 5000
+    ELSE
+        biaya = 5000 + (durasiJam - 1) * 2000
+    END IF
+ELSE
+    OUTPUT "Kendaraan apa itu..."
+    STOP
+END IF
+
+OUTPUT "Lama parkir: " + durasiJam + " jam"
+OUTPUT "Total biaya: Rp" + biaya
+
+END

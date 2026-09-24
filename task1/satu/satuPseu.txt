@@ -1,0 +1,25 @@
+START
+
+INPUT berat
+INPUT tinggi
+
+tinggi = tinggi / 100
+
+imt = berat / (tinggi * tinggi)
+
+IF imt < 18.5 THEN
+    kategori = "Kurus"
+ELSE IF imt < 25 THEN
+    kategori = "Normal"
+ELSE IF imt < 30 THEN
+    kategori = "Gemuk"
+ELSE
+    kategori = "Obesitas"
+END IF
+
+OUTPUT "Berat badan : " + berat
+OUTPUT "Tinggi badan: " + tinggi
+OUTPUT "Kategori    : " + kategori
+OUTPUT "IMT         : " + imt
+
+END

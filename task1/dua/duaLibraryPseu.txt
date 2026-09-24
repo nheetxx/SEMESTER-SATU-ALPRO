@@ -1,0 +1,34 @@
+START
+
+INPUT batas_bawah
+INPUT batas_atas
+
+IF batas_bawah > batas_atas THEN
+    OUTPUT "Batas bawah tidak boleh lebih besar dari batas atas."
+ELSE
+    bilangan_prima = [ ]
+
+    FOR angka = batas_bawah TO batas_atas DO
+        jumlah_pembagi = 0
+
+        FOR pembagi = 1 TO angka DO
+            IF angka MOD pembagi == 0 THEN
+                jumlah_pembagi = jumlah_pembagi + 1
+            END IF
+        END FOR
+
+        IF jumlah_pembagi == 2 THEN
+            APPEND angka TO bilangan_prima
+        END IF
+    END FOR
+
+    IF LENGTH(bilangan_prima) == 0 THEN
+        OUTPUT "Tidak ada bilangan prima."
+    ELSE
+        OUTPUT "Bilangan prima:", bilangan_prima
+    END IF
+
+    OUTPUT "Jumlah bilangan prima:", LENGTH(bilangan_prima)
+END IF
+
+END
