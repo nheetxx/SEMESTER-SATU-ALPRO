@@ -1,0 +1,17 @@
+masuk 7
+keluar 9
+
+berapa lama dalem kampus?
+keluar - masuk = 9 - 7 = 2
+
+
+
+
+sapi = 5
+sapi += 2
+sapi = sapi + 2
+
+
+
+kalo ada yang beda = she's mine
+kalo gaada yg beda = puasa beli skin 2 bulan
