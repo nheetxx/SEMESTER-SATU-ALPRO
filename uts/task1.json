@@ -1,0 +1,92 @@
+{
+  "version": "7.0",
+  "nodes": [
+    {
+      "id": 1,
+      "type": "start",
+      "text": "Start",
+      "x": 32,
+      "y": 10,
+      "w": 150,
+      "h": 58
+    },
+    {
+      "id": 2,
+      "type": "input",
+      "text": "angka",
+      "x": 10,
+      "y": 97,
+      "w": 190,
+      "h": 70
+    },
+    {
+      "id": 3,
+      "type": "decision",
+      "text": "angka % 2 == 0",
+      "x": 46,
+      "y": 233,
+      "w": 122,
+      "h": 122
+    },
+    {
+      "id": 4,
+      "type": "output",
+      "text": "\"Ganjil\"",
+      "x": 268,
+      "y": 261,
+      "w": 190,
+      "h": 70
+    },
+    {
+      "id": 5,
+      "type": "output",
+      "text": "\"Genap\"",
+      "x": 10,
+      "y": 479,
+      "w": 190,
+      "h": 70
+    },
+    {
+      "id": 6,
+      "type": "end",
+      "text": "End",
+      "x": 289,
+      "y": 485,
+      "w": 150,
+      "h": 58
+    }
+  ],
+  "edges": [
+    {
+      "from": 1,
+      "to": 2,
+      "branch": null
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "branch": null
+    },
+    {
+      "from": 3,
+      "to": 5,
+      "branch": "true"
+    },
+    {
+      "from": 3,
+      "to": 4,
+      "branch": "false"
+    },
+    {
+      "from": 5,
+      "to": 6,
+      "branch": null
+    },
+    {
+      "from": 4,
+      "to": 6,
+      "branch": null
+    }
+  ],
+  "nextId": 7
+}
