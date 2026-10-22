@@ -2,9 +2,8 @@
 #     for k in range(5):
 #         print("*", end=" ")
 #     print()
-        
+    
 for i in range(3):
-    print("")
-    for k in range(5):
+    for k in range(6):
         angka = "* "
-        print(angka * k)
+    print(angka * k)
