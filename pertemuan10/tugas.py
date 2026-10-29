@@ -1,41 +1,67 @@
-bA = [[]]
-kA = [[]]
-bB = [[]]
-kB = [[]]
 while True:
-    barisA = int(input("Masukkan jumlah baris matriks A"))
-    kolomA = int(input("Masukkan jumlah kolom matriks A"))
-    barisB = int(input("Masukkan jumlah baris matriks B"))
-    kolomB = int(input("Masukkan jumlah kolom matriks B"))
-
-    bA = [0] * barisA
-    kA = [0] * kolomA
-    bB = [0] * barisB
-    kB = [0] * kolomB
+    barisA = int(input("Jumlah baris matriks A: "))
+    kolomA = int(input("Jumlah kolom matriks A: "))
+    barisB = int(input("Jumlah baris matriks B: "))
+    kolomB = int(input("Jumlah kolom matriks B: "))
+    
+    matriksA = []
+    matriksB = []
 
     for i in range(barisA):
-        isiBarisA = int(input(f"Masukkan isi baris ke-{i+1} A"))
-        bA[i] = isiBarisA
-        
-    for i in range(kolomA):
-        isiKolomA = int(input(f"Masukkan isi kolom ke-{i+1} A"))
-        kA[i] = isiKolomA
+        baris = []
+        for j in range(kolomA):
+            angka = int(input(f"Isi matriks A [Baris {i+1}][Kolom {j+1}]: "))
+            baris.append(angka)
+        matriksA. append(baris)
         
     for i in range(barisB):
-        isiBarisB = int(input(f"Masukkan isi baris ke-{i+1} B"))
-        bB[i] = isiBarisB
+        baris = []
+        for j in range(kolomB):
+            angka = int(input(f"Isi matriks B [Baris {i+1}][Kolom {j+1}]: "))
+            baris.append(angka)
+        matriksB. append(baris)
         
-    for i in range(kolomB):
-        isiKolomB = int(input(f"Masukkan isi kolom ke-{i+1} A"))
-        kA[i] = isiKolomA
-    break
-
-print(bA)
-print(kA)
-print(bB)
-print(kA)
+    print("Hasil matriks A")
+    for i in matriksA:
+        print(i)
+    print("Hasil matriks B")
+    for i in matriksB:
+        print(i)
+        
+    pilihan = input("Pilih opsi\n1. Penjumlahan\n2. Perkalian\n(1/2): ")
     
-# for i in range(len(hasil)):
-#     for j in range(len(hasil[i])):
-#         print(f"Matriks i = {i}, j = {j} ={hasil[i][j]} |", end=" ")
-#     print()
+    if pilihan == "1":
+        if barisA != barisB or kolomA != kolomB:
+            print(f"{barisA}x{kolomA} dan {barisB}x{kolomB} tidak sama.")
+            continue
+        else:
+            print("Hasil penjumlahan matriks A dan matriks B adalah:")
+            for i in range(len(matriksA)):
+                for j in range(len(matriksA[i])):
+                    print(matriksA[i][j] + matriksB[i][j], end=" ")
+                print()
+    
+    elif pilihan == "2":
+        if kolomA != barisB:
+            print(f"{barisA}x{kolomA} dan {barisB}x{kolomB} tidak memenuhi syarat")
+            continue
+        else:
+            hasilPerkalian = []
+            for i in range(barisA):
+                barisNew = []
+                for j in range(kolomB):
+                    barisNew.append(0)
+                hasilPerkalian.append(barisNew)
+            for i in range(barisA):
+                for j in range(kolomB):
+                    for k in range(kolomA):
+                        hasilPerkalian[i][j] += matriksA[i][k] * matriksB[k][j]
+            print("Hasil perkalian matriks A dan matriks B adalah:")
+            for i in hasilPerkalian:
+                print(i)
+                
+    else:
+        print("Pilihan tidak sesuai.")
+        continue
+    
+    break

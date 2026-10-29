@@ -1,62 +1,56 @@
-while True:
-    barisA = int(input("Jumlah baris matriks A: "))
-    kolomA = int(input("Jumlah kolom matriks A: "))
-    barisB = int(input("Jumlah baris matriks B: "))
-    kolomB = int(input("Jumlah kolom matriks B: "))
-    
+print("Pilih operasi:")
+print("1. Penjumlahan")
+print("2. Perkalian")
+pilihan = input("Pilihan (1/2): ")
+
+barisA = int(input("Jumlah baris matriks A: "))
+kolomA = int(input("Jumlah kolom matriks A: "))
+barisB = int(input("Jumlah baris matriks B: "))
+kolomB = int(input("Jumlah kolom matriks B: "))
+
+if pilihan == "1" and (barisA != barisB or kolomA != kolomB):
+    print("Gagal: penjumlahan butuh ukuran matriks yang SAMA.")
+elif pilihan == "2" and kolomA != barisB:
+    print("Gagal: perkalian butuh kolom A = baris B.")
+elif pilihan != "1" and pilihan != "2":
+    print("Pilihan tidak sesuai.")
+
+else:
     matriksA = []
-    matriksB = []
-    
     for i in range(barisA):
-        barisan = []
+        baris = []
         for j in range(kolomA):
-            angka = int(input(f"Isi Matriks A [Baris {i+1}][Kolom {j+1}]: "))
-            barisan.append(angka)
-        matriksA.append(barisan)
+            angka = int(input(f"A[{i+1}][{j+1}]: "))
+            baris.append(angka)
+        matriksA.append(baris)
 
+    matriksB = []
     for i in range(barisB):
-        barisan = []
+        baris = []
         for j in range(kolomB):
-            angka = int(input(f"Isi Matriks B [Baris {i+1}][Kolom {j+1}]: "))
-            barisan.append(angka)
-        matriksB.append(barisan)
+            angka = int(input(f"B[{i+1}][{j+1}]: "))
+            baris.append(angka)
+        matriksB.append(baris)
 
-    print("Hasil Matriks A:")
-    for i in matriksA:
-        print(i)
-    print("Hasil Matriks B:")
-    for i in matriksB:
-        print(i)
-    
-    pilihan = input("Pilih opsi\n1. Penjumlahan\n2. Perkalian\n(1/2) ")
-    
+    hasil = []
+
     if pilihan == "1":
-        print("Penjumlahan Matriks A dan B")
-        for i in range(len(matriksA)):
-            for j in range(len(matriksA[i])):
-                print(matriksA[i][j] + matriksB[i][j], end=" ");
-            print();
+        for i in range(barisA):
+            baris = []
+            for j in range(kolomA):
+                baris.append(matriksA[i][j] + matriksB[i][j])
+            hasil.append(baris)
 
-    elif pilihan == "2":
-        if kolomA != barisB:
-            print(f"{barisA}x{kolomA} dan {barisB}x{kolomB} tidak sesuai syarat.")
-            continue
-        else:
-            hasilPerkalian = []
-            for i in range(barisA):
-                baris_baru = []
-                for j in range(kolomB):
-                    baris_baru.append(0)
-                hasilPerkalian.append(baris_baru)
-            
-            for i in range(barisA):
-                for j in range(kolomB):
-                    for k in range(kolomA):
-                        hasilPerkalian[i][j] += matriksA[i][k] * matriksB[k][j]
-            
-            print("Hasil Perkalian Matriks A dan B:")
-            for i in hasilPerkalian:
-                print(i)
     else:
-        print("Pilihan tidak sesuai")
-    break
+        for i in range(barisA):
+            baris = []
+            for j in range(kolomB):
+                total = 0
+                for k in range(kolomA):
+                    total += matriksA[i][k] * matriksB[k][j]
+                baris.append(total)
+            hasil.append(baris)
+
+    print("Hasil:")
+    for baris in hasil:
+        print(baris)
