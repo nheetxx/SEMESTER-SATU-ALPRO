@@ -21,14 +21,17 @@ while True:
             baris.append(angka)
         matriksB. append(baris)
         
-    print("Hasil matriks A")
+    print("\nHasil matriks A")
     for i in matriksA:
         print(i)
-    print("Hasil matriks B")
+    print(f"Jumlah baris matriks A: {barisA}\nJumlah kolom matriks A: {kolomA}")
+    
+    print("\nHasil matriks B")
     for i in matriksB:
         print(i)
+    print(f"Jumlah baris matriks B: {barisB}\nJumlah kolom matriks B: {kolomB}")
         
-    pilihan = input("Pilih opsi\n1. Penjumlahan\n2. Perkalian\n(1/2): ")
+    pilihan = input("\nPilih opsi\n1. Penjumlahan\n2. Perkalian\n(1/2): ")
     
     if pilihan == "1":
         if barisA != barisB or kolomA != kolomB:
